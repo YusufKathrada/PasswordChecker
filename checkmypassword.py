@@ -12,6 +12,10 @@ import sys
 def request_api_data(query_char):
     # API uses SHA1 hashing --> password123 = CBFDAC6008F9CAB4083784CBD1874F76618D2A97
     # Uses k anonymity, hence only use first 5 char of hash
+    # k anonymity refers to the the fcat that there is atleast k-1 otherusers with same attributes,
+    # therefore password not unique to a certain individual
+
+    
     url = 'https://api.pwnedpasswords.com/range/' + query_char
     res = requests.get(url)
     if res.status_code != 200:
